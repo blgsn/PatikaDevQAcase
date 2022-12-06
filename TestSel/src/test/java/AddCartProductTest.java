@@ -24,7 +24,6 @@ public class AddCartProductTest extends BaseTest {
     public void search_a_product(){
         homePage = new HomePage(driver);
         homePage.acceptCookies();
-        
         homePage.searchBox().search("kaşık maması");
         productsPage = new ProductPage(driver);
         Assertions.assertTrue(productsPage.isOnProductPage() ,

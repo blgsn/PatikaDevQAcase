@@ -23,13 +23,15 @@ public class ProductPage extends BasePage {
     	getAllProducts().get(i);
     	List<WebElement> outOfStockItem = driver.findElements(By.cssSelector("span[class=product-item__special-internet product-item__out-of-stock-badge out-of-stock ng-star-inserted]"));
     	if(outOfStockItem.size()>0) {
-    		if(getAllProducts().get(i)==outOfStockItem) {
-    	    i--;
-    	    }}
-        else
+    		if(getAllProducts().get(i)==outOfStockItem) 
+    	    i--;  
+    	    else
     		getAllProducts().get(i).click();
-    }
-
+    	    }
+    	else
+    		getAllProducts().get(i).click();
+    	}
+       
     private List<WebElement> getAllProducts(){
         return findAll(productNameLocator);
     }
