@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CartPage extends BasePage {
 
-    By productNameLocator = new By.ByCssSelector(".cx-link > h2");
+    By productNameLocator = new By.ByCssSelector("a.cx-link");
     By endShippingButton = By.cssSelector("#btnGoToShippingAddress > .ng-star-inserted");
   	
     public CartPage(WebDriver driver) {
