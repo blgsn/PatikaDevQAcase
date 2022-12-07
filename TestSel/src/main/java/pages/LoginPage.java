@@ -37,7 +37,8 @@ public class LoginPage extends BasePage {
 		public void submitPassword() {
 		driver.findElement(enterPage1).click();
 		}
-		
+		//check if we are on login page
+
 		public boolean isCorrectLoginPage() {
 	        return isDisplayed(loginPageLocator);
 	    }
