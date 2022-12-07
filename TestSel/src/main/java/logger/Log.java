@@ -2,7 +2,7 @@ package logger;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-
+//Returning error, warning and info messages using log4j
 public class Log {
 
     static Logger logger = Logger.getLogger(Log.class);
