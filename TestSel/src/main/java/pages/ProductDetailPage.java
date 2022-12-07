@@ -11,15 +11,15 @@ public class ProductDetailPage extends BasePage{
     public ProductDetailPage(WebDriver driver) {
         super(driver);
     }
-
+//Checking if we are on the product detail page
     public boolean isOnProductDetailPage() {
         return isDisplayed(addToCartButtonLocator);
     }
-
+//method of add to cart
     public void addToCart() {
         click(addToCartButtonLocator);
     }
-
+//method of go to cart
     public void goToCart() {
         click(cartContainerLocator); 
     }
