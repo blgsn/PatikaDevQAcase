@@ -26,7 +26,7 @@ public class AddCartProductTest extends BaseTest {
         homePage.acceptCookies();
         homePage.searchBox().search("kaşık maması");
         productsPage = new ProductPage(driver);
-        Assertions.assertTrue(productsPage.isOnProductPage() ,
+        Assertions.assertTrue(productsPage.isOnProductPage() ,  //shows error message if we are not on product search result page
                 "Not on products page!");
     }
 
@@ -35,7 +35,7 @@ public class AddCartProductTest extends BaseTest {
     public void select_a_product(){
         productDetailPage = new ProductDetailPage(driver);
         productsPage.selectProduct(43);
-        Assertions.assertTrue(productDetailPage.isOnProductDetailPage(),
+        Assertions.assertTrue(productDetailPage.isOnProductDetailPage(),  //shows error message if we are not on product detail page
                 "Not on product detail page!");
     }
 
@@ -43,7 +43,7 @@ public class AddCartProductTest extends BaseTest {
     @Order(3)
     public void add_product_to_cart(){
         productDetailPage.addToCart();
-        Assertions.assertTrue(homePage.isProductCountUp(),
+        Assertions.assertTrue(homePage.isProductCountUp(),  //shows an error message if the number of items in the cart has not increased
                 "Product count did not increase!");
     }
 
@@ -52,7 +52,7 @@ public class AddCartProductTest extends BaseTest {
     public void go_to_cart(){
         cartPage = new CartPage(driver);
         productDetailPage.goToCart();
-        Assertions.assertTrue(cartPage.checkIfProductAdded() ,
+        Assertions.assertTrue(cartPage.checkIfProductAdded() ,//shows error message If the product is not added to the cart
                 "Product was not added to cart!");
     }
     
@@ -62,7 +62,7 @@ public class AddCartProductTest extends BaseTest {
     	//Creating object of Login page
     	loginPage = new LoginPage(driver);
     			cartPage.endShopping();
-        Assertions.assertTrue(loginPage.isCorrectLoginPage() ,
+        Assertions.assertTrue(loginPage.isCorrectLoginPage() , //shows error message if we are not on login page
                 "Not on login page!");
     }
     
@@ -75,7 +75,7 @@ public class AddCartProductTest extends BaseTest {
     			 loginPage.submitLogin();
         loginPage.enterPassword("Ayicik.17");
         loginPage.submitPassword();
-        Assertions.assertTrue(homePage.isCorrectLogin() ,
+        Assertions.assertTrue(homePage.isCorrectLogin() , //shows error message if login failed
                 "Wrong email or password!");
     }
 }
