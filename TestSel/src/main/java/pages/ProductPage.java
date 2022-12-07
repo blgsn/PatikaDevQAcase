@@ -14,11 +14,12 @@ public class ProductPage extends BasePage {
     public ProductPage(WebDriver driver) {
         super(driver);
     }
-
+    
+//check if we are on the product search result page
     public boolean isOnProductPage() {
         return isDisplayed(shippingOptionLocator);
     }
-
+//clicking on the unsold product if the last product in the search result is out of stock
     public void selectProduct(int i) {
     	getAllProducts().get(i);
     	List<WebElement> outOfStockItem = driver.findElements(By.cssSelector("span[class=product-item__special-internet product-item__out-of-stock-badge out-of-stock ng-star-inserted]"));
@@ -31,7 +32,7 @@ public class ProductPage extends BasePage {
     	else
     		getAllProducts().get(i).click();
     	}
-       
+       //all products in the search result
     private List<WebElement> getAllProducts(){
         return findAll(productNameLocator);
     }
