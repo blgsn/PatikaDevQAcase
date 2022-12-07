@@ -24,15 +24,15 @@ public class BasePage {
     }
     
     
-
+    //the click part
     public void click(By locator){
         find(locator).click();
     }
-
+    //sends the text in the search button
     public void type(By locator , String text){
         find(locator).sendKeys(text+(Keys.ENTER));
     }
-
+    //display part
     public Boolean isDisplayed(By locator){
         return find(locator).isDisplayed();
     }
